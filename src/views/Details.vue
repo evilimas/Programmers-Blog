@@ -56,4 +56,7 @@ export default {
 .pre {
   white-space: pre-wrap;
 }
+button.delete {
+  cursor: pointer;
+}
 </style>

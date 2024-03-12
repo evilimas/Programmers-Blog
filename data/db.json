@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "welcome to the new blog",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "tags": [
+        "webdev",
+        "coding",
+        "news"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "top 5 CSS tips",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "tags": [
+        "css",
+        "webdev",
+        "coding"
+      ]
+    },
+    {
+      "id": "5cc3",
+      "title": "New post ",
+      "body": "this is the new post for my blog",
+      "tags": [
+        "html"
+      ]
+    },
+    {
+      "id": "1fdf",
+      "title": "asdasd",
+      "body": "asdasd",
+      "tags": [
+        "html"
+      ]
+    }
+  ]
+}

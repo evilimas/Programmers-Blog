@@ -5,28 +5,24 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { projectFirestore } from '../firebase/config';
 import { onSnapshot, collection, orderBy, query } from 'firebase/firestore';
 import { ref } from 'vue';
-export default {
-  setup() {
-    const posts = ref([]);
-    const q = query(
-      collection(projectFirestore, 'posts'),
-      orderBy('createdAt', 'desc')
-    );
-    onSnapshot(q, (snap) => {
-      console.log('snapshot: ', snap);
-      let docs = snap.docs.map((doc) => {
-        return { ...doc.data(), id: doc.id };
-      });
-      console.log('documents: ', docs);
-      posts.value = docs;
-    });
-    return { posts };
-  },
-};
+
+const posts = ref([]);
+const q = query(
+  collection(projectFirestore, 'posts'),
+  orderBy('createdAt', 'desc')
+);
+onSnapshot(q, (snap) => {
+  console.log('snapshot: ', snap);
+  let docs = snap.docs.map((doc) => {
+    return { ...doc.data(), id: doc.id };
+  });
+  console.log('documents: ', docs);
+  posts.value = docs;
+});
 </script>
 
 <style></style>

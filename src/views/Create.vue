@@ -14,7 +14,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
+// imports
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -23,38 +24,34 @@ import { useRouter } from 'vue-router';
 import { projectFirestore, timestamp } from '../firebase/config';
 import { collection, addDoc } from 'firebase/firestore';
 
-export default {
-  setup() {
-    const title = ref('');
-    const body = ref('');
-    const tag = ref('');
-    const tags = ref([]);
+// refs
+const title = ref('');
+const body = ref('');
+const tag = ref('');
+const tags = ref([]);
 
-    const router = useRouter();
-    // router.go(-1)
+const router = useRouter();
+// router.go(-1)
 
-    const handleKeydown = () => {
-      if (!tags.value.includes(tag.value)) {
-        tag.value = tag.value.replace(/\s/, ''); // removes all whitespace
-        tags.value.push(tag.value);
-      }
-      tag.value = '';
-    };
-    const handleSubmit = async () => {
-      const post = {
-        title: title.value,
-        body: body.value,
-        tags: tags.value,
-        createdAt: timestamp,
-      };
-      const colRef = collection(projectFirestore, 'posts');
-      await addDoc(colRef, post);
+// functions
 
-      router.push({ name: 'home' });
-    };
-
-    return { title, body, tag, handleKeydown, tags, handleSubmit };
-  },
+const handleKeydown = () => {
+  if (!tags.value.includes(tag.value)) {
+    tag.value = tag.value.replace(/\s/, ''); // removes all whitespace
+    tags.value.push(tag.value);
+  }
+  tag.value = '';
+};
+const handleSubmit = async () => {
+  const post = {
+    title: title.value,
+    body: body.value,
+    tags: tags.value,
+    createdAt: timestamp,
+  };
+  const colRef = collection(projectFirestore, 'posts');
+  await addDoc(colRef, post);
+  router.push({ name: 'home' });
 };
 </script>
 

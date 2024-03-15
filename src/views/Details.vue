@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import getPost from '@/composables/getPost';
 import { useRoute, useRouter } from 'vue-router';
 
@@ -20,26 +20,20 @@ import Spinner from '../components/Spinner.vue';
 import { projectFirestore } from '../firebase/config';
 import { doc, deleteDoc } from 'firebase/firestore';
 
-export default {
-  props: ['id'],
-  components: { Spinner },
-  setup(props) {
-    const route = useRoute();
-    const router = useRouter();
-    // console.log(route)
-    // console.log(route.params)
-    const { error, post, load } = getPost(route.params.id);
+const props = defineProps(['id']);
 
-    load();
+const route = useRoute();
+const router = useRouter();
+// console.log(route)
+// console.log(route.params)
+const { error, post, load } = getPost(route.params.id);
 
-    const handleDelete = async (post) => {
-      const docRef = doc(projectFirestore, 'posts', post.id);
-      await deleteDoc(docRef);
-      router.push({ name: 'home' });
-    };
+load();
 
-    return { error, post, handleDelete };
-  },
+const handleDelete = async (post) => {
+  const docRef = doc(projectFirestore, 'posts', post.id);
+  await deleteDoc(docRef);
+  router.push({ name: 'home' });
 };
 </script>
 

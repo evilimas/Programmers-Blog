@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Spinner from '../components/Spinner.vue';
 import PostList from '../components/PostList.vue';
 import TagCloud from '../components/TagCloud.vue';
@@ -19,21 +19,14 @@ import getPosts from '../composables/getPosts';
 import { useRoute } from 'vue-router';
 import { computed } from 'vue';
 
-export default {
-  components: { PostList, Spinner, TagCloud },
-  setup() {
-    const route = useRoute();
-    const { posts, error, load } = getPosts();
+const route = useRoute();
+const { posts, error, load } = getPosts();
 
-    load();
+load();
 
-    const postsWithTag = computed(() => {
-      return posts.value.filter((p) => p.tags.includes(route.params.tag));
-    });
-
-    return { error, posts, postsWithTag };
-  },
-};
+const postsWithTag = computed(() => {
+  return posts.value.filter((p) => p.tags.includes(route.params.tag));
+});
 </script>
 
 <style>

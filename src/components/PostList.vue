@@ -6,17 +6,12 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { onMounted, onUnmounted, onUpdated } from 'vue';
 
 // component imports
 import SinglePost from './SinglePost.vue';
-
-export default {
-  props: ['posts'],
-  components: { SinglePost },
-  setup() {},
-};
+const props = defineProps(['posts']);
 </script>
 
 <style></style>

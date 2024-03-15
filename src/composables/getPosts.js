@@ -16,7 +16,6 @@ const getPosts = () => {
         id: doc.id,
       }));
       posts.value = postData;
-      console.log(postData);
     } catch (err) {
       error.value = err.message;
       console.log(error.value);

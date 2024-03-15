@@ -15,21 +15,16 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { computed } from 'vue';
-export default {
-  props: ['post'],
-  setup(props) {
-    const snippet = computed(() => {
-      //to return a post snippet until 100 characters of the post body
-      //   return props.post.body.slice(0, 100) + '...';
-      return props.post.body.substring(0, 100) + '....';
-    });
-    return {
-      snippet,
-    };
-  },
-};
+
+const props = defineProps(['post']);
+
+const snippet = computed(() => {
+  //to return a post snippet until 100 characters of the post body
+  //   return props.post.body.slice(0, 100) + '...';
+  return props.post.body.substring(0, 100) + '....';
+});
 </script>
 
 <style>

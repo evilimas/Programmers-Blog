@@ -8,8 +8,6 @@
   </header>
 </template>
 
-<script setup></script>
-
 <style>
 header {
   display: flex;

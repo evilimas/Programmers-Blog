@@ -7,10 +7,9 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, onUpdated } from 'vue';
-
 // component imports
 import SinglePost from './SinglePost.vue';
+
 const props = defineProps(['posts']);
 </script>
 

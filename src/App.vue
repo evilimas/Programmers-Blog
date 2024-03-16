@@ -4,6 +4,7 @@
 </template>
 
 <script setup>
+// imports
 import Navbar from './components/Navbar.vue';
 </script>
 

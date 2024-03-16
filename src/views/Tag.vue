@@ -12,6 +12,7 @@
 </template>
 
 <script setup>
+// imports
 import Spinner from '../components/Spinner.vue';
 import PostList from '../components/PostList.vue';
 import TagCloud from '../components/TagCloud.vue';

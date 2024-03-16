@@ -6,15 +6,18 @@
 </template>
 
 <script setup>
+// imports
 import { projectFirestore } from '../firebase/config';
 import { onSnapshot, collection, orderBy, query } from 'firebase/firestore';
 import { ref } from 'vue';
 
 const posts = ref([]);
+
 const q = query(
   collection(projectFirestore, 'posts'),
   orderBy('createdAt', 'desc')
 );
+
 onSnapshot(q, (snap) => {
   console.log('snapshot: ', snap);
   let docs = snap.docs.map((doc) => {

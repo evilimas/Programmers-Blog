@@ -21,11 +21,8 @@ import { projectFirestore } from '../firebase/config';
 import { doc, deleteDoc } from 'firebase/firestore';
 
 const props = defineProps(['id']);
-
 const route = useRoute();
 const router = useRouter();
-// console.log(route)
-// console.log(route.params)
 const { error, post, load } = getPost(route.params.id);
 
 load();

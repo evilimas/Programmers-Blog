@@ -10,6 +10,7 @@
 </template>
 
 <script setup>
+//imports
 import useTags from '../composables/useTags';
 
 const props = defineProps(['posts']);

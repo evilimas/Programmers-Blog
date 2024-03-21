@@ -2,6 +2,10 @@
 
 The Programmers Blog is a Vue.js application tailored for developers to share and explore programming-related content. Whether you're here to read, contribute, or explore. It integrates seamlessly with Firebase Firestore for efficient data storage and retrieval.
 
+## Wana create a post or read what others have shared?
+
+### Live Link: https://programmer-blog.netlify.app/
+
 ## Features
 
 - **Home View**: Browse through a curated list of blog posts covering a wide range of programming topics.

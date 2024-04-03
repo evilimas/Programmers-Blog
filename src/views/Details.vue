@@ -3,7 +3,9 @@
   <div v-if="post" class="post">
     <h3>{{ post.title }}</h3>
     <p class="pre">{{ post.body }}</p>
-    <button class="delete" @click="handleDelete(post)">delete post</button>
+    <button class="delete" @click="handleDelete(post)" disabled>
+      delete post
+    </button>
   </div>
   <div v-else>
     <Spinner />
@@ -48,6 +50,6 @@ const handleDelete = async (post) => {
   white-space: pre-wrap;
 }
 button.delete {
-  cursor: pointer;
+  cursor: not-allowed;
 }
 </style>

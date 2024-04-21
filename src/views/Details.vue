@@ -13,11 +13,11 @@
 </template>
 
 <script setup>
+//imports
 import getPost from '@/composables/getPost';
 import { useRoute, useRouter } from 'vue-router';
-
-// component imports
 import Spinner from '../components/Spinner.vue';
+
 //firebase imports
 import { projectFirestore } from '../firebase/config';
 import { doc, deleteDoc } from 'firebase/firestore';

@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-// component imports
+// imports
 import SinglePost from './SinglePost.vue';
 
 const props = defineProps(['posts']);

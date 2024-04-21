@@ -16,6 +16,7 @@
 </template>
 
 <script setup>
+// imports
 import { computed } from 'vue';
 
 const props = defineProps(['post']);
